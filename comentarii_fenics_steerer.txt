@@ -1,0 +1,26 @@
+conda info --envs
+conda activate fenicsx-real
+python fs01_main_steerer_fenics.py 
+python fs02_clean_msh.py 
+python fs03_convert_mesh.py 
+python fs04_steerer_meshio.py 
+python fs05_vedere_mesh.py 
+======================================================
+
+# conda environments:
+#
+env1                   /home/js/.conda/envs/env1
+envlmn                 /home/js/.conda/envs/envlmn
+envy                   /home/js/.conda/envs/envy
+fenicsx                /home/js/.conda/envs/fenicsx
+mp                     /home/js/.conda/envs/mp
+pmp                    /home/js/.conda/envs/pmp
+base                 * /home/js/miniforge3
+fenicsx-compx          /home/js/miniforge3/envs/fenicsx-compx
+fenicsx-real           /home/js/miniforge3/envs/fenicsx-real
+
+
+========================================================
+
+conda install -c conda-forge networkx
+conda install -c conda-forge shapely

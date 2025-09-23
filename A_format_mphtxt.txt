@@ -1,0 +1,101 @@
+In .mphtxt format am formatul de mai jos 
+################################################################
+# Created by COMSOL Multiphysics Mon Sep 15 08:37:22 2025
+
+
+# Major & minor version
+0 1 
+1 # number of tags
+# Tags
+6 fem1.0 
+1 # number of types
+# Types
+3 obj 
+
+# --------- Object 0 ----------
+
+0 0 1 
+4 Mesh # class
+1 # version
+2 # sdim
+404 # number of mesh points (** 403)
+0 # lowest mesh point index
+
+# Mesh point coordinates
+Exemple: -0.27549444186070404 8.5811058643090996e-017 
+
+############################################################
+3 # number of element types <=> asta este o explicatie, exista 3 tipuri de elemente 
+# Type name: (3 vtx, 3 edg, 3 tri);
+# Type (3 vtx, 3 edg, 3 tri) = (0, 1, 2); 
+# No. nods:  (3 vtx, 3 edg, 3 tri) =  (1, 2, 3); 
+# Nr. of elements:   = (21, 124, 754)
+# Nr. of domains: (3 vtx, 3 edg, 3 tri) = (21, 124, 754)
+# Nr. of params: (3 vtx, 3 edg, 3 tri) = (0, 124, 0)
+# Params values:  (3 vtx, 3 edg, 3 tri) = (0, 2, 6)
+# Up / Down: (3 vtx, 3 edg, 3 tri) = (0, 124, 0)
+################ VTX = puncte ? ################################################
+# Type #0
+3 vtx # type name
+## --------------------------------------------------------- ## 
+1 # number of nodes per element
+22 # number of elements (** 21)
+# Elements
+Example Element vtx: 3 
+## --------------------------------------------------------- ## 
+0 # number of parameter values per element
+0 # number of parameters
+# Parameters
+## --------------------------------------------------------- ## 
+22 # number of domains (** 21)
+# Domains
+Example domain vtx: 0 
+## --------------------------------------------------------- ## 
+0 # number of up/down pairs
+# Up/down
+################ edg = muchie  ################################################
+# Type #1
+3 edg # type name
+## --------------------------------------------------------- ##
+2 # number of nodes per element
+125 # number of elements (** 124)
+# Elements
+Exemplu element muchie: 3 0 
+## --------------------------------------------------------- ##
+2 # number of parameter values per element
+125 # number of parameters (** 124)
+# Parameters
+Exemplu parametru muchie: 0 0.26664628932529233 
+## --------------------------------------------------------- ##
+125 # number of domains (** 124)
+# Domains
+Exemplu domeniu muchie: 1 
+## --------------------------------------------------------- ##
+125 # number of up/down pairs (** 124)
+# Up/down
+Exemplu Up/down muchie: 1 0
+si lista continua pana la 125 de Up/down muchie 
+################ tri = triunghi (element finit ?)  #################################
+# Type #2
+3 tri # type name
+## --------------------------------------------------------- ##
+3 # number of nodes per element
+755 # number of elements (** 754)
+# Elements
+Exemplu element triunghi: 4 7 1
+si lista continua pana la 755 de elemente triunghi 
+## --------------------------------------------------------- ##
+6 # number of parameter values per element
+0 # number of parameters
+# Parameters
+Exemplu parametru triunghi: nu exista, pt ca sunt 0 number of parameters
+## --------------------------------------------------------- ##
+755 # number of domains (** 754)
+# Domains
+Exemplu domeniu triunghi: 1 
+si lista continua pana la 755 de domenii triunghi 
+## --------------------------------------------------------- ##
+0 # number of up/down pairs
+# Up/down
+Exemplu up/down pairs triunghi: nu exista, pt ca sunt 0 up/down pairs triunghi:
+#################################################################################################
