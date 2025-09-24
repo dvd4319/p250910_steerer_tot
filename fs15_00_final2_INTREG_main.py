@@ -64,7 +64,7 @@ def map_cell_tags_to_nodes(mesh, cell_tags, values_dict):
 # #############################################################
 # ### ================= MPHTXT ============================ ###
 # #############################################################
-mphtxt_file = "comsol2dfara_spire_1pe8_vechi1_3dom_403.mphtxt"
+mphtxt_file = "comsol2dfara_spire_1pe8_vechi1_3dom_403_nou.mphtxt"
 nodes_mphtxt, tris_mphtxt, edgs_mphtxt, tri_domains_mphtxt = f01_load_comsol_mphtxt(mphtxt_file)
 print("###############################################")
 print("DATELE SUNT CULESTE DIN .mphtxt")
