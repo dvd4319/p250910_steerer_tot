@@ -8,8 +8,8 @@ from fs15_plot import visualize_xdmf_mesh, plot_subdomains
 ########################################################################################################
 from fs15_subdomains_data_501 import subdomains, colors, labels
 from fs15_plot_granite import plot_external_boundary, plot_dirichlet_neumann_boundaries, plot_subdomains_tris
-from fs15_solve_problem import assign_material_properties, define_boundary_conditions
-from fs15_solve_problem import   assign_materials, plot_materials_on_mesh, assign_materials_variant, plot_materials_on_mesh_variant
+from vechi_detoate.fs15_solve_problem import assign_material_properties, define_boundary_conditions
+from vechi_detoate.fs15_solve_problem import   assign_materials, plot_materials_on_mesh, assign_materials_variant, plot_materials_on_mesh_variant
 ########################################################################################################
 from dolfinx.io.gmshio import read_from_msh, model_to_mesh
 from dolfinx.io import XDMFFile

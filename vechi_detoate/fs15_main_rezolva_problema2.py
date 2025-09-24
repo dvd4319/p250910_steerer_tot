@@ -3,8 +3,8 @@ from fs15_01_nods_edg_tri_plot import (p01_plot_mesh_mphtxt,  p02_plot_mesh_with
                                        p04_plot_cell_tags, p05_plot_domains_gmesh1, p06_visualize_xdmf_mesh, p07_plot_subdomains)
 from fs15_01_nods_edg_tri_plot import ( p08_plot_external_boundary, p09_plot_dirichlet_neumann_boundaries, p10_plot_subdomains_tris)
 ########################################################################################################
-from fs15_solve_problem import assign_material_properties, define_boundary_conditions
-from fs15_solve_problem import   assign_materials, plot_materials_on_mesh, assign_materials_variant, plot_materials_on_mesh_variant
+from vechi_detoate.fs15_solve_problem import assign_material_properties, define_boundary_conditions
+from vechi_detoate.fs15_solve_problem import   assign_materials, plot_materials_on_mesh, assign_materials_variant, plot_materials_on_mesh_variant
 #################################################################################################
 import meshio
 import numpy as np

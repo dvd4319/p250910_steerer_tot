@@ -5,8 +5,8 @@ from fs15_01_nods_edg_tri_plot import (p01_plot_mesh_mphtxt,  p02_plot_mesh_with
 #from fs15_plot import visualize_xdmf_mesh, plot_subdomains
 ########################################################################################################
 from fs15_plot_granite import plot_external_boundary, plot_dirichlet_neumann_boundaries, plot_subdomains_tris
-from fs15_solve_problem import assign_material_properties, define_boundary_conditions
-from fs15_solve_problem import   assign_materials, plot_materials_on_mesh, assign_materials_variant, plot_materials_on_mesh_variant
+from vechi_detoate.fs15_solve_problem import assign_material_properties, define_boundary_conditions
+from vechi_detoate.fs15_solve_problem import   assign_materials, plot_materials_on_mesh, assign_materials_variant, plot_materials_on_mesh_variant
 from vechi_detoate.fs15_constructie_muchii import  build_edge_to_triangles, find_interface_edges, group_edges_by_domain, plot_interface_edges, save_domain_node_lists
 ########################################################################################################
 from dolfinx.io.gmshio import read_from_msh, model_to_mesh
