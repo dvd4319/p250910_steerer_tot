@@ -1,34 +1,24 @@
 from fs15_01_nods_edg_tri_plot import (
     f01_load_comsol_mphtxt, f02_build_adjacency, f03_find_domains, f04_convert_mphtxt_to_gmsh, 
-    f04_convert_mphtxt_to_gmsh_nou, f05_load_comsol_msh, f06_convert_msh_to_xdmf, 
-    f07_extract_triangles_to_xdmf, f08_inspect_xdmf_mesh, f09_read_xdmf_mesh
+    f04_convert_mphtxt_to_gmsh_nou, f05_load_comsol_msh
 )
 from fs15_01_nods_edg_tri_plot import (
-    p01_plot_mesh_mphtxt, p02_plot_mesh_with_labels, p03_plot_domains_mphtxt, 
-    p04_plot_cell_tags, p05_plot_domains_gmesh1, p06_visualize_xdmf_mesh, p07_plot_subdomains
+    p01_plot_mesh_mphtxt, p02_plot_mesh_with_labels, p03_plot_domains_mphtxt, p05_plot_domains_gmesh1
 )
-from fs15_01_nods_edg_tri_plot import (
-    p08_plot_external_boundary, p09_plot_dirichlet_neumann_boundaries, p10_plot_subdomains_tris
-)
-from dolfinx import mesh, fem, plot, default_scalar_type
+
+from dolfinx import default_scalar_type
 from dolfinx.io import XDMFFile
-from dolfinx.io.gmshio import read_from_msh, model_to_mesh
-from dolfinx.mesh import locate_entities_boundary, compute_midpoints, meshtags
-from dolfinx.fem import dirichletbc, Expression, Function, functionspace, locate_dofs_topological, form, locate_dofs_geometrical 
-from dolfinx.fem.petsc import assemble_matrix, assemble_vector, apply_lifting, set_bc, LinearProblem
+from dolfinx.mesh import locate_entities_boundary
+from dolfinx.fem import dirichletbc,Function, functionspace, locate_dofs_topological
+from dolfinx.fem.petsc import LinearProblem
 from dolfinx.plot import vtk_mesh
-from ufl import TestFunction, TrialFunction, as_vector, dot, dx, grad, inner, Measure 
-from petsc4py import PETSc
+from ufl import TestFunction, TrialFunction, as_vector, dot, grad, inner, Measure 
 from mpi4py import MPI
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-import pyvista
 import pyvista as pv
 import ufl 
 import meshio
-import basix.ufl
-import h5py
 import basix
 
 # MPI setup
@@ -113,7 +103,7 @@ def process_mphtxt(mphtxt_file):
     return nodes_mphtxt, tris_mphtxt, edgs_mphtxt, tri_domains_mphtxt
 
 # Convert .mphtxt to .msh and plot
-def convert_to_msh(mphtxt_file, msh_file):
+def convert_mphtxt_to_msh(mphtxt_file, msh_file):
     """
     Converts .mphtxt to .msh and visualizes the resulting mesh.
     """
@@ -604,7 +594,7 @@ def main():
 
     setup_mpi()
     process_mphtxt(mphtxt_file)
-    convert_to_msh(mphtxt_file, msh_file)
+    convert_mphtxt_to_msh(mphtxt_file, msh_file)
     convert_msh_to_xdmf(msh_file, xdmf_tri_file, xdmf_edge_file)
     mesh, ct = load_and_plot_xdmf(xdmf_tri_file)
     plot_mesh_with_domains(xdmf_tri_file)
