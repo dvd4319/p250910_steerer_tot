@@ -332,9 +332,6 @@ def visualize_mesh_pyvista(xdmf_tri_file):
 
 # Solve magnetic potential A_z
 def solve_magnetic_potential(xdmf_tri_file):
-    """
-    Solves for the magnetic vector potential A_z.
-    """
     with XDMFFile(MPI.COMM_WORLD, xdmf_tri_file, "r") as xdmf:
         domain_2 = xdmf.read_mesh(name="Grid")
         ct = xdmf.read_meshtags(domain_2, name="Grid")
@@ -587,8 +584,8 @@ def main():
     """
     Main function to orchestrate the entire workflow.
     """
-    mphtxt_file = "comsol2dfara_spire_1pe8_vechi1_3dom_403_nou.mphtxt"
-    msh_file = "comsol2dfara_spire_1pe8_vechi1_3dom_403_nou.msh"
+    mphtxt_file = "steerer_dipole_magnet_2D_plan_parallel_1pe4.mphtxt"
+    msh_file = "steerer_dipole_magnet_2D_plan_parallel_1pe4.msh"
     xdmf_tri_file = msh_file.replace(".msh", "_triangles.xdmf")
     xdmf_edge_file = msh_file.replace(".msh", "_edges.xdmf")
 
@@ -608,3 +605,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
